@@ -9,6 +9,7 @@ import scrapy
 
 class CarItem(scrapy.Item):
     """Definition of CarItem."""
+    CarName = scrapy.Field()
     ImgURL = scrapy.Field()
     Price = scrapy.Field()
     Year = scrapy.Field()

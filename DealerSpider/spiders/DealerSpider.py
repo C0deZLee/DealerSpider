@@ -39,6 +39,8 @@ class DealerSpider(BaseSpider):
         car_item['DealerURL'] = str(response.xpath('//*[@id="columnmiddle_wide"]/div[1]/div/div[1]/a[2]/@href').extract()[0])
         car_item['DealerPhoneNum'] = str(response.xpath('//*[@id="columnmiddle_wide"]/div[1]/div/div[1]/div[2]/p[1]/text()').extract()[0])
         car_item['DealerAddress'] = str(response.xpath('//*[@id="columnmiddle_wide"]/div[1]/div/div[1]/div[2]/p[2]/text()').extract()[0][30:-1])+str(response.xpath('//*[@id="columnmiddle_wide"]/div[1]/div/div[1]/div[2]/p[2]/text()').extract()[1][17:-1])
+        car_item['CarName'] = str(response.xpath('//*[@id="columnmiddle_wide"]/h1/text()').extract()[0])
+        
         if response.xpath('//img[@id="image_large"]/@src').extract()!=[]:
             car_item['ImgURL'] = str(response.xpath('//img[@id="image_large"]/@src').extract()[0])
         else:

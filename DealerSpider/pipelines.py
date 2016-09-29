@@ -19,6 +19,7 @@ class CarPipeline(object):
         next_car_num = r.incr('next_car_num')
         # get value list
         input_value_list = {
+            'CarName' : item['CarName'],
             'ImgURL' : item['ImgURL'],
             'Price' : item['Price'],
             'Year' : item['Year'],
